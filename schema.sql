@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS APItable;
-CREATE TABLE IF NOT EXISTS APItable(
+DROP TABLE IF EXISTS APIcon;
+CREATE TABLE IF NOT EXISTS APIcon(
     id SERIAL PRIMARY KEY,
-    disease_name text,
-    description_t text,
-    drugs_names text[](512)
-   
+    drug text,
+    conflicts_drugs text[]
+
+
 );
 -- DROP TABLE IF EXISTS trending;
 -- CREATE TABLE IF NOT EXISTS trending(
