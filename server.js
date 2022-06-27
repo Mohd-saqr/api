@@ -17,6 +17,7 @@ const server = express()
 server.use(cors())
 server.use(express.json())
 const port = process.env.PORT
+const data =require('./data/Drug Details.json')
 
 
 server.listen(5000,()=>{
@@ -39,6 +40,7 @@ server.post('/api/advice',handelPostAdvive)
 server.get('/api/advice',handelGetAdvice)
 server.post('/api/con',handelPostcon)
 server.get('/api/con',handelGetcon)
+server.get('/api/drugs',handelDrugs)
 
 
 function handelPostcon(req,res){
@@ -68,6 +70,10 @@ function handelGetcon(req,res){
 
     });
 
+}
+
+function handelDrugs(req,res){
+    return res.status(200).json(data)
 }
 
 
